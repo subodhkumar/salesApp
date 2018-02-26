@@ -1,0 +1,527 @@
+<!-- <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Apex</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Catamaran');
+
+        body {
+            padding: 15px 25px;
+            margin: 50px auto 25px auto;
+            font-family: 'Catamaran', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            height: 50px;
+            background: #eee;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .header .options {
+            text-align: right;
+        }
+
+        .header .logo {
+            font-weight: bolder;
+            font-size: 1.25em;
+        }
+
+        .mainOptionsDiv {
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px;
+        }
+
+        .mainOption {
+            font-weight: bold;
+            font-size: 1em;
+
+        }
+
+        .mainOption.selected {
+            font-size: 1.1em;
+            border-bottom: 2px solid;
+        }
+
+        .content {
+            display: grid;
+            grid-gap: 15px;
+        }
+
+        .salesDiv {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        .salesDiv .action {
+            display: grid;
+            grid-template-columns: 5fr 1fr;
+            grid-gap: 5px;
+            align-items: end;
+        }
+
+        .addSales button,
+        .fw-button {
+            width: 100%;
+        }
+
+        input.searchInput {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #eee;
+            font-size: .8em;
+            outline: none;
+            padding: 5px;
+        }
+
+        .card {
+            border: 1px solid #eee;
+            box-sizing: border-box;
+            padding: 10px 15px;
+        }
+
+        .tHeader {
+            border-bottom: 1px solid #eee;
+            font-weight: bold;
+        }
+
+        .salesTable .tRow {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: 1fr 4fr repeat(4, 2fr);
+        }
+
+        .salesDetailsDiv {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        .infoLabel {
+            font-size: .75em;
+        }
+
+        input.fwInput {
+            width: 100%;
+            padding: 5px 5px 5px 0px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .companyInfoForm,
+        .quoteActionForm,
+        .estimationActionForm {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        .bidInfoForm {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 20px;
+            grid-row-gap: 10px;
+        }
+
+        .estInfoForm {
+            display: grid;
+            grid-row-gap: 10px;
+            grid-column-gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .tContent {
+            font-size: .9em;
+        }
+
+        .quoteDiv,.estimationDiv {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        .quoteActionDiv,
+        .salesActionDiv,
+        .estimationActionDiv {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    </style>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header">
+        <div class="logo">Aboard</div>
+        <div class="options">
+            <i class="material-icons">account_circle</i>
+        </div>
+    </div>
+    <div class="content">
+
+        <div class="mainOptionsDiv">
+            <div class="mainOption">Sales</div>
+            <div class="mainOption">Estimates</div>
+            <div class="mainOption">Projects</div>
+            <div class="mainOption">Quotes</div>
+            <div class="mainOption">Roles</div>
+        </div>
+
+        <div class="salesDiv">
+            <div class="divHeader">Sales Dashboard</div>
+
+            <div class="action">
+                <div class="search">
+                    <input type="text" placeholder="Search Sales Lead" class="searchInput" />
+                </div>
+                <div class="addSales">
+                    <button type=""> Add </button>
+                </div>
+            </div>
+            <div class="contentDiv">
+                <div class="card salesTable">
+                    <div class="tRow tHeader">
+                        <div>
+                            #
+                        </div>
+                        <div>Company</div>
+                        <div>Received</div>
+                        <div>Sent</div>
+                        <div>Assignee</div>
+                        <div>Status</div>
+                    </div>
+                    <div class="content">
+                        <div class="tRow tContent">
+                            <div>
+                                1
+                            </div>
+                            <div>Company 1</div>
+                            <div>Received 1</div>
+                            <div>Sent 1</div>
+                            <div>Assignee 1</div>
+                            <div>Status 1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div> Sales Form </div>
+        <div class="salesDetailsDiv">
+            <div class="salesActionDiv">
+                <div>
+                    <button class="fw-button">Publish</button>
+                </div>
+                <div>
+                    <button class="fw-button">Save</button>
+                </div>
+                <div>
+                    <button class="fw-button">Cancel</button>
+                </div>
+            </div>
+            <div class="card companyInfo">
+                <div class="cardHeader">
+                    Company Info
+                </div>
+                <div class="companyInfoForm">
+                    <div class="info">
+                        <div class="infoLabel">Company Name</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Address</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">URL</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Contact</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card bidInfo">
+                <div class="cardHeader">
+                    Bid Info
+                </div>
+                <div class="bidInfoForm">
+                    <div class="info">
+                        <div class="infoLabel">Received Date</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="date">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Received from</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Sent Date</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="date">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Document Received</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Document Path</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Bid Requirement</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Bid Status</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Sales person</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card estInfo">
+                <div class="cardHeader">
+                    Estimate Info
+                </div>
+                <div class="estInfoForm">
+                    <div class="info">
+                        <div class="infoLabel">Inclusions</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Exclusions</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Main Steel Hours</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Main Steel Estimated Schedule</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Misc Steel Hours</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="infoLabel">Misc Steel Estimated Schedule</div>
+                        <div class="infoContent">
+                            <input class="fwInput" type="text">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div> Quote </div>
+        <div class="quoteDiv">
+            <div class="quoteActionDiv">
+                <div>
+                    <button class="fw-button">Generate Quote</button>
+                </div>
+                <div>
+                    <button class="fw-button">Save</button>
+                </div>
+                <div>
+                    <button class="fw-button">Cancel</button>
+                </div>
+            </div>
+            <div class="quoteActionForm">
+                <div class="card estInfo">
+                    <div class="cardHeader">
+                        Estimate Info
+                    </div>
+                    <div class="estInfoForm">
+                        <div class="info">
+                            <div class="infoLabel">Inclusions</div>
+                            <div class="infoContent">
+                                <input class="fwInput" type="text">
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="infoLabel">Exclusions</div>
+                            <div class="infoContent">
+                                <input class="fwInput" type="text">
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="infoLabel">Main Steel Hours</div>
+                            <div class="infoContent">
+                                <input class="fwInput" type="text">
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="infoLabel">Main Steel Estimated Schedule</div>
+                            <div class="infoContent">
+                                <input class="fwInput" type="text">
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="infoLabel">Misc Steel Hours</div>
+                            <div class="infoContent">
+                                <input class="fwInput" type="text">
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="infoLabel">Misc Steel Estimated Schedule</div>
+                            <div class="infoContent">
+                                <input class="fwInput" type="text">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card estInfo">
+
+                    <div class="estInfoForm">
+                        <div class="info">
+                            <div class="infoLabel">Quote Price</div>
+                            <div class="infoContent">
+                                <input class="fwInput" type="text">
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="infoLabel">Remarks/Comments</div>
+                            <div class="infoContent">
+                                <input class="fwInput" type="text">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div> Estimation </div>
+        <div class="estimationDiv">
+            <div class="estimationActionDiv">
+                <div>
+                    <button class="fw-button">Publish</button>
+                </div>
+                <div>
+                    <button class="fw-button">Save</button>
+                </div>
+                <div>
+                    <button class="fw-button">Cancel</button>
+                </div>
+            </div>
+            <div class="estimationActionForm">
+                    <div class="card estInfo">
+                            <div class="cardHeader">
+                                Estimate Info
+                            </div>
+                            <div class="estInfoForm">
+                                <div class="info">
+                                    <div class="infoLabel">Inclusions</div>
+                                    <div class="infoContent">
+                                        <input class="fwInput" type="text">
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="infoLabel">Exclusions</div>
+                                    <div class="infoContent">
+                                        <input class="fwInput" type="text">
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="infoLabel">Main Steel Hours</div>
+                                    <div class="infoContent">
+                                        <input class="fwInput" type="text">
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="infoLabel">Main Steel Estimated Schedule</div>
+                                    <div class="infoContent">
+                                        <input class="fwInput" type="text">
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="infoLabel">Misc Steel Hours</div>
+                                    <div class="infoContent">
+                                        <input class="fwInput" type="text">
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="infoLabel">Misc Steel Estimated Schedule</div>
+                                    <div class="infoContent">
+                                        <input class="fwInput" type="text">
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- header -->
+    <!-- options -->
+    <!-- Sales List -->
+    <!-- Sales Form -->
+    <!-- Sales Details -->
+    <!-- Quote -->
+    <!-- Estimation -->
+</body>
+
+</html>

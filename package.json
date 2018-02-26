@@ -1,0 +1,22 @@
+{
+  "name": "salesapp",
+  "version": "1.0.0",
+  "description": "SalesApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subodhkumar/salesApp.git"
+  },
+  "author": "subodh kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subodhkumar/salesApp/issues"
+  },
+  "homepage": "https://github.com/subodhkumar/salesApp#readme",
+  "devDependencies": {
+    "express": "^4.16.2"
+  }
+}
