@@ -1,0 +1,153 @@
+
+        @import url('https://fonts.googleapis.com/css?family=Catamaran');
+
+        body {
+            padding: 15px 25px;
+            margin: 50px auto 25px auto;
+            font-family: 'Catamaran', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            height: 50px;
+            background: #eee;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .header .options {
+            text-align: right;
+        }
+
+        .header .logo {
+            font-weight: bolder;
+            font-size: 1.25em;
+        }
+
+        .mainOptionsDiv {
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px;
+        }
+
+        .mainOption {
+            font-weight: bold;
+            font-size: 1em;
+
+        }
+
+        .mainOption.selected {
+            font-size: 1.1em;
+            border-bottom: 2px solid;
+        }
+
+        .content {
+            display: grid;
+            grid-gap: 15px;
+        }
+
+        .salesDiv {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        .salesDiv .action {
+            display: grid;
+            grid-template-columns: 5fr 1fr;
+            grid-gap: 5px;
+            align-items: end;
+        }
+
+        .addSales button,
+        .fw-button {
+            width: 100%;
+        }
+
+        input.searchInput {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #eee;
+            font-size: .8em;
+            outline: none;
+            padding: 5px;
+        }
+
+        .card {
+            border: 1px solid #eee;
+            box-sizing: border-box;
+            padding: 10px 15px;
+        }
+
+        .tHeader {
+            border-bottom: 1px solid #eee;
+            font-weight: bold;
+        }
+
+        .salesTable .tRow {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: 1fr 4fr repeat(4, 2fr);
+        }
+
+        .salesDetailsDiv {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        .infoLabel {
+            font-size: .75em;
+        }
+
+        input.fwInput {
+            width: 100%;
+            padding: 5px 5px 5px 0px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .companyInfoForm,
+        .quoteActionForm,
+        .estimationActionForm {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        .bidInfoForm {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 20px;
+            grid-row-gap: 10px;
+        }
+
+        .estInfoForm {
+            display: grid;
+            grid-row-gap: 10px;
+            grid-column-gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .tContent {
+            font-size: .9em;
+        }
+
+        .quoteDiv,.estimationDiv {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        .quoteActionDiv,
+        .salesActionDiv,
+        .estimationActionDiv {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    
