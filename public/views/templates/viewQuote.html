@@ -19,14 +19,14 @@
             <div class="estInfoForm">
                 <div class="info">
                     <div class="infoLabel">Inclusions</div>
-                    <div class="infoContent">
-                        <input class="fwInput" type="text">
+                    <div class="infoContent tagContent">
+                        <div class="tagItem" ng-repeat="i in inclusion" ng-click="setInclusion(i)" ng-class="{'selected':(incSelected.indexOf(i)>-1)}">{{i}}</div>
                     </div>
                 </div>
                 <div class="info">
                     <div class="infoLabel">Exclusions</div>
-                    <div class="infoContent">
-                        <input class="fwInput" type="text">
+                    <div class="infoContent tagContent">
+                        <div class="tagItem" ng-repeat="i in exclusions" ng-click="setExclusion(i)" ng-class="{'selected':(excSelected.indexOf(i)>-1)}">{{i}}</div>
                     </div>
                 </div>
                 <div class="info">

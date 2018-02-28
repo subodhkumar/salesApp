@@ -32,6 +32,7 @@
 
         .header .options {
             text-align: right;
+            cursor: pointer;
         }
 
         .header .logo {
@@ -45,17 +46,22 @@
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 10px;
             margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
         }
 
         .mainOption {
             font-weight: bold;
             font-size: 1em;
-
+            transition: .1s;
+            
         }
 
         .mainOption.selected {
-            font-size: 1.1em;
-            border-bottom: 2px solid;
+            font-size: 1em;
+            color: blueviolet;
+            font-weight: bold;
+            transition: .1s;
+            border-bottom: 3px solid blueviolet;
         }
 
         .content {
@@ -183,4 +189,56 @@
         .activeOption {
             color:blueviolet;
             font-size:1.15em;
+        }
+        .tagContent {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            font-size: .8em;
+            align-items: start;
+            grid-gap: 5px;
+        }
+        .tagItem {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+            padding: .1em .5em;
+            cursor: pointer;
+        }
+        .tagItem:hover {
+            border: 1px solid blueviolet;
+            color: blueviolet;
+        }
+
+        .tagItem.selected {
+            color: blueviolet;
+            border: 1px solid blueviolet;
+            
+        }
+        .notification {
+            position: absolute;
+            top: 1.5vh;
+            right: 2vw;
+            padding: 1.5em;
+            z-index: 99;
+            background: rgba(138,43,226,.95);
+            width: 30vw;
+            border-radius: 5px;
+            box-shadow: 0px 3px 2px -1px #bbb;
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+            grid-gap: 5px;
+            cursor: pointer;
+        }
+        .nClose {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: white;
+        }
+        .nHeader {
+            color: white;
+        }
+        .nContent {
+            color: white;
+            font-size: .8em;
         }

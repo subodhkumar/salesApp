@@ -33,12 +33,20 @@
     <div class="content" ng-controller="homeController">
 
         
+       
         <div class="mainOptionsDiv">
-            <div class="mainOption" ng-click="goSalesDb()" > Sales</div>
-            <div class="mainOption" ng-click="goEstDb()">Estimates</div>
-            <div class="mainOption" ng-click="goProjDb()">Projects</div>
-            <div class="mainOption" ng-click="goViewQuote()">Quotes</div>
-            <!-- <div class="mainOption" ng-click="goSalesDb()">Roles</div> -->
+            <div class="mainOption" ng-click="goSalesDb()" ng-class="{'selected':(state.current.name==='app.salesDb')} "> Sales</div>
+            <div class="mainOption" ng-click="goEstDb()" ng-class="{'selected':(state.current.name==='app.estDb')}" >Estimates</div>
+            <div class="mainOption" ng-click="goProjDb()" ng-class="{'selected':(state.current.name==='app.projDb')} ">Projects</div>
+            <div class="mainOption" ng-click="goViewQuote()" ng-class="{'selected':(state.current.name==='app.viewQuote')} ">Quotes</div>
+            <!-- <div class="mainOption" ng-click="goSalesDb()" ng-class="{'selected':(state.current.name==='app.salesDb')} >Roles</div> -->
+        </div>
+
+        <div class=""><button ng-click="showNotification()">Show Notification</button></div>
+        <div class="notification" ng-show="nShow">
+            <div class="nClose" ng-click="closeNotification()"><i class="material-icons">close</i></div>
+            <div class="nHeader">{{nHeader}}</div>
+            <div class="nContent">{{nContent}}</div>
         </div>
 
         <div class="containerDiv">

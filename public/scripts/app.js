@@ -65,8 +65,9 @@ app.config(function($stateProvider,$urlRouterProvider){
 
     
 })
-app.controller('homeController',function($scope,$state){
+app.controller('homeController',function($scope,$state,$timeout){
 
+   
     $scope.state = $state;
     $scope.goSalesDb = function(){
         
@@ -82,6 +83,7 @@ app.controller('homeController',function($scope,$state){
         $state.go('app.addSales');
     }
     $scope.goViewEst = function(){
+        $scope.resetIncExc();
         $state.go('app.viewEst');
     }
     $scope.goViewQuote = function(){
@@ -91,7 +93,9 @@ app.controller('homeController',function($scope,$state){
         $state.go('app.viewSales');
     }
 
+    
     $scope.showSalesLead = function(lead){
+        $scope.resetIncExc();
         $scope.curLead = lead;
         $scope.goViewSales();
     }
@@ -101,9 +105,70 @@ app.controller('homeController',function($scope,$state){
         $scope.goViewEst();
     }
 
+    $scope.inclusion = [
+        'Anchor Bolts',
+        'Beams',
+        'Columns',
+        'Braces',
+        'Kickers',
+        'Beam bearing plates',
+        'Joint bearing plates',
+        'Loose Plates',
+        'Ledger Angles',
+        'Lintels'
+    ];
+    $scope.exclusions = [
+        'Connection Design & PE Stamping',
+        'Stairs',
+        'Hand Rails',
+        'Wall Rails',
+        'Guard Rails',
+        'Joists',
+        'Roof Deck',
+        'Trash Gate',
+        'Bollard'
+    ];
     $scope.salesStatus = [
         'Lead','Published','Estimation','Quote','Bid','Close','Win'
     ];
+
+    $scope.showNotification  = function(){
+        $scope.nHeader = 'Welcome to Apex';
+        $scope.nContent = 'Please check out the features';
+        $scope.nShow = true;
+        $timeout(function(){
+            $scope.nShow = false;
+        },5000);
+    }
+
+    $scope.closeNotification = function(){
+        $scope.nShow = false;
+    }
+
+    $scope.resetIncExc = function(){
+        $scope.incSelected = $scope.excSelected = [];
+    }
+
+    $scope.resetIncExc();
+    
+    $scope.setExclusion = function(val){
+        let index = $scope.excSelected.indexOf(val);
+        if(index>-1){
+            $scope.excSelected.splice(index,1);
+        } else {
+            $scope.excSelected.push(val);
+        }
+    } ;
+    $scope.setInclusion = function(val){
+        let index = $scope.incSelected.indexOf(val);
+        if(index>-1){
+            $scope.incSelected.splice(index,1);
+        } else {
+            $scope.incSelected.push(val);
+        }
+    } ;
+
+    
     $scope.addressList = [
         {
           "address": "152 Erskine Loop, Volta, Federated States Of Micronesia, 2654"
@@ -150,30 +215,34 @@ app.controller('homeController',function($scope,$state){
       ];
 
     $scope.getAmount = function(){
-        return Math.ceil(Math.random()*9999);
+        return Math.ceil(Math.random())*9999;
     }
     $scope.getYesNo = function(){
-        return (Math.ceil(Math.random()*10)%2)?'Yes':'No';
+        return ((Math.ceil(Math.random())*10)%2)?'Yes':'No';
     }  
+   
     $scope.getHours = function(){
-        return Math.ceil(Math.random()*100);
+        let res = Math.round(Math.random())*100;
+        return res;
     }
+    
     $scope.getReceivedDate = function(){
-        return new Date(2018,Math.ceil(Math.random()*11),Math.ceil(Math.random()*29));
+        return new Date(2018,Math.ceil(Math.random())*11,Math.ceil(Math.random())*29);
     }
     $scope.getSentDate = function(){
-        return new Date(2017,Math.ceil(Math.random()*11),Math.ceil(Math.random()*29));
+        return new Date(2017,Math.ceil(Math.random())*11,Math.ceil(Math.random())*29);
     }
     $scope.getStatus = function(){
-        return $scope.salesStatus[Math.floor(Math.random()*$scope.salesStatus.length)];
+        return $scope.salesStatus[Math.floor(Math.random())*$scope.salesStatus.length];
     }
     $scope.getAddress = function(){
-        return $scope.addressList[Math.floor(Math.random()*$scope.addressList.length)].address;
+        return $scope.addressList[Math.floor(Math.random())*$scope.addressList.length].address;
     }
     $scope.getName = function(){
-        return $scope.nameList[Math.floor(Math.random()*$scope.nameList.length)].name;
+        return $scope.nameList[Math.floor(Math.random())*$scope.nameList.length].name;
     }
 
+    
 
     $scope.pushToSalesList = function(cname){
         if(cname){
@@ -254,4 +323,5 @@ app.controller('homeController',function($scope,$state){
         }
       ];
 
+      
 });
