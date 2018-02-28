@@ -1,0 +1,34 @@
+<div class="divHeader"> Estimation Dashboard</div>
+<div class="estimationDiv">
+    <div class="action">
+        <div class="search">
+            <input type="text" placeholder="Search Sales Estimations" class="searchInput" />
+        </div>
+    </div>
+    <div class="contentDiv">
+        <div class="card salesTable">
+            <div class="tRow tHeader">
+                <div>
+                    #
+                </div>
+                <div>Company</div>
+                <div>Received</div>
+                <div>Sent</div>
+                <div>Assignee</div>
+                <div>Status</div>
+            </div>
+            <div class="content">
+                <div ng-repeat="i in salesList | limitTo: 8" class="tRow tContent" ng-click="showEstimate(i)">
+                    <div>
+                        {{i.index+1}}
+                    </div>
+                    <div>{{i.company}}</div>
+                    <div>{{ getReceivedDate()|date}}</div>
+                    <div>{{ getSentDate()|date}}</div>
+                    <div>{{ i.assignee}}</div>
+                    <div>Estimation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

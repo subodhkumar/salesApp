@@ -1,0 +1,151 @@
+<div class="divHeader"> Sales Form </div>
+{{selectedLead}}
+<div class="salesDetailsDiv">
+    <div class="salesActionDiv">
+        <div>
+            <button class="fw-button" ng-click="goSalesDb()">Send for Estimate</button>
+        </div>
+        <div>
+            <button class="fw-button" ng-click="goViewQuote()">Prepare Quote</button>
+        </div>
+        <div>
+            <button class="fw-button" ng-click="goSalesDb()">Close - Won</button>
+        </div>
+        <div>
+            <button class="fw-button" ng-click="goSalesDb()">Close - Failed to win</button>
+        </div>
+        
+    </div>
+    <div class="card companyInfo">
+        <div class="cardHeader">
+            Company Info
+        </div>
+        <div class="companyInfoForm">
+            <div class="info">
+                <div class="infoLabel">Company Name</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{curLead.company}}</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Address</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{getAddress()}}</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">URL</div>
+                <div class="infoContent">
+                    <div class="info">www.{{curLead.company.toLowerCase()}}.com</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Contact</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{curLead.assignee}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="card bidInfo">
+        <div class="cardHeader">
+            Bid Info
+        </div>
+        <div class="bidInfoForm">
+            <div class="info">
+                <div class="infoLabel">Received Date</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{getReceivedDate()|date}}</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Received from</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{getName()}}</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Sent Date</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{getSentDate()|date}}</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Document Received</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{getYesNo()}}</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Document Path</div>
+                <div class="infoContent">
+                    <div class="fieldData"> NA </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Bid Requirement</div>
+                <div class="infoContent">
+                    <div class="fieldData"> NA </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Bid Status</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{getStatus()}}</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Sales person</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{getName()}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="card estInfo">
+        <div class="cardHeader">
+            Estimate Info
+        </div>
+        <div class="estInfoForm">
+            <div class="info">
+                <div class="infoLabel">Inclusions</div>
+                <div class="infoContent">
+                    <div class="fieldData"></div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Exclusions</div>
+                <div class="infoContent">
+                    <div class="fieldData"></div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Main Steel Hours</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{getHours()}}</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Main Steel Estimated Schedule</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{getReceivedDate()|date}}</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Misc Steel Hours</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{getHours()}}</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infoLabel">Misc Steel Estimated Schedule</div>
+                <div class="infoContent">
+                    <div class="fieldData">{{getReceivedDate()|date}}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

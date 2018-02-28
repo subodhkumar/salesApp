@@ -1,0 +1,78 @@
+<div> Quote </div>
+<div class="quoteDiv">
+    <div class="quoteActionDiv">
+        <div>
+            <button class="fw-button" ng-click="goSalesDb()">Generate Quote</button>
+        </div>
+        <div>
+            <button class="fw-button"  ng-click="goSalesDb()">Save</button>
+        </div>
+        <div>
+            <button class="fw-button"  ng-click="goViewSales()">Cancel</button>
+        </div>
+    </div>
+    <div class="quoteActionForm">
+        <div class="card estInfo">
+            <div class="cardHeader">
+                Estimate Info
+            </div>
+            <div class="estInfoForm">
+                <div class="info">
+                    <div class="infoLabel">Inclusions</div>
+                    <div class="infoContent">
+                        <input class="fwInput" type="text">
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="infoLabel">Exclusions</div>
+                    <div class="infoContent">
+                        <input class="fwInput" type="text">
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="infoLabel">Main Steel Hours</div>
+                    <div class="infoContent">
+                        <input class="fwInput" type="text" value="{{getHours()}}">
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="infoLabel">Main Steel Estimated Schedule</div>
+                    <div class="infoContent">
+                        <input class="fwInput" type="text" value="{{getReceivedDate()|date}}">
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="infoLabel">Misc Steel Hours</div>
+                    <div class="infoContent">
+                        <input class="fwInput" type="text" value="{{getHours()}}">
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="infoLabel">Misc Steel Estimated Schedule</div>
+                    <div class="infoContent">
+                        <input class="fwInput" type="text"  value="{{getReceivedDate()|date}}">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card estInfo">
+
+            <div class="estInfoForm">
+                <div class="info">
+                    <div class="infoLabel">Quote Price</div>
+                    <div class="infoContent">
+                        <input class="fwInput" type="text" value="{{getAmount()|currency}}">
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="infoLabel">Remarks/Comments</div>
+                    <div class="infoContent">
+                        <input class="fwInput" type="text" value="The details needs review">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

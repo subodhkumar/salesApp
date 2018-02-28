@@ -1,12 +1,13 @@
-<div class="salesDiv">
+<div class="salesDiv sectionDiv">
     <div class="divHeader">Sales Dashboard</div>
+
+    <div class="divAction">
+        <button class="" ng-click="goAddSales()"> Add Lead </button>
+    </div>
 
     <div class="action">
         <div class="search">
             <input type="text" placeholder="Search Sales Lead" class="searchInput" />
-        </div>
-        <div class="addSales">
-            <button type=""> Add </button>
         </div>
     </div>
     <div class="contentDiv">
@@ -22,15 +23,15 @@
                 <div>Status</div>
             </div>
             <div class="content">
-                <div class="tRow tContent">
+                <div ng-repeat="i in salesList" class="tRow tContent" ng-click="showSalesLead(i)">
                     <div>
-                        1
+                        {{i.index+1}}
                     </div>
-                    <div>Company 1</div>
-                    <div>Received 1</div>
-                    <div>Sent 1</div>
-                    <div>Assignee 1</div>
-                    <div>Status 1</div>
+                    <div>{{i.company}}</div>
+                    <div>{{ getReceivedDate()|date}}</div>
+                    <div>{{ getSentDate()|date}}</div>
+                    <div>{{ i.assignee}}</div>
+                    <div>{{getStatus()}}</div>
                 </div>
             </div>
         </div>

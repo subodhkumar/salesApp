@@ -8,6 +8,15 @@
             box-sizing: border-box;
         }
 
+        button {
+            background: blueviolet;
+            padding: 10px 20px;
+            box-shadow: none;
+            outline: none;
+            border-radius: 3px;
+            color: white;
+        }
+
         .header {
             position: fixed;
             top: 0;
@@ -33,8 +42,9 @@
         .mainOptionsDiv {
             cursor: pointer;
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             grid-gap: 10px;
+            margin-bottom: 20px;
         }
 
         .mainOption {
@@ -50,7 +60,7 @@
 
         .content {
             display: grid;
-            grid-gap: 15px;
+            grid-gap: 5px;
         }
 
         .salesDiv {
@@ -58,11 +68,13 @@
             grid-gap: 10px;
         }
 
-        .salesDiv .action {
-            display: grid;
-            grid-template-columns: 5fr 1fr;
-            grid-gap: 5px;
-            align-items: end;
+        .divAction {
+            text-align: right;
+        }
+
+        .divHeader {
+            font-weight: bold;
+            font-size: 28px;
         }
 
         .addSales button,
@@ -102,7 +114,8 @@
         }
 
         .infoLabel {
-            font-size: .75em;
+            font-size: .7em;
+            color: blueviolet;
         }
 
         input.fwInput {
@@ -136,6 +149,16 @@
 
         .tContent {
             font-size: .9em;
+            cursor: pointer;
+            transition-duration: .2s;
+            background: transparent;
+        }
+        .tContent:hover {
+            font-size: 1.0em;
+            font-weight: bold;
+            transition-duration: .2s;
+            color: blueviolet;
+            background: rgba(46,46,46,.05);
         }
 
         .quoteDiv,.estimationDiv {
@@ -144,10 +167,20 @@
         }
 
         .quoteActionDiv,
-        .salesActionDiv,
+        .addSalesActionDiv,
         .estimationActionDiv {
             display: grid;
             grid-gap: 10px;
             grid-template-columns: repeat(3, 1fr);
         }
+
+        .salesActionDiv {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(4, 1fr);   
+        }
     
+        .activeOption {
+            color:blueviolet;
+            font-size:1.15em;
+        }
