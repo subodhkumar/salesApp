@@ -13,11 +13,11 @@
     </div>
     <div class="card companyInfo">
         <div class="cardHeader">
-            Company Info
+            Fabricator Info
         </div>
         <div class="companyInfoForm">
             <div class="info">
-                <div class="infoLabel">Company Name</div>
+                <div class="infoLabel">Fabricator Name</div>
                 <div class="infoContent">
                     <input class="fwInput" ng-model="newCompany" type="text">
                 </div>
@@ -79,9 +79,11 @@
                 </div>
             </div>
             <div class="info">
-                <div class="infoLabel">Bid Requirement</div>
-                <div class="infoContent">
-                    <input class="fwInput" type="text">
+                <div class="infoLabel">Bid type</div>
+                <div class="infoContent bidType">
+                    <div><input type="checkbox" name="bidType" value="structural"> Structural<br></div>
+                    <div><input type="checkbox" name="bidType" value="miscellaneous"> Miscellaneous<br></div>
+                    <div><input type="checkbox" name="bidType" value="engineering"> Engineering<br></div>
                 </div>
             </div>
             <div class="info">
@@ -140,6 +142,19 @@
                     <input class="fwInput" type="text">
                 </div>
             </div>
+
+        </div>
+    </div>
+    <div class="card estInfo">
+
+        <div class="one-col">
+            <div class="info">
+                <div class="infoLabel">Remarks</div>
+                <div class="infoContent">
+                    <input class="fwInput" type="text" value="">
+                </div>
+            </div>
+           
 
         </div>
     </div>

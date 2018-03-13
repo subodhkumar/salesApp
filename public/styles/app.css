@@ -111,7 +111,7 @@
         .salesTable .tRow {
             display: grid;
             grid-gap: 5px;
-            grid-template-columns: 1fr 4fr repeat(4, 2fr);
+            grid-template-columns: 1fr 2fr 3fr repeat(6, 2fr);
         }
 
         .salesDetailsDiv {
@@ -241,4 +241,19 @@
         .nContent {
             color: white;
             font-size: .8em;
+        }
+        .bidType {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            font-size: 12px;
+        }
+        .cardSubHeader {
+            font-size: 10px;
+            margin-bottom: 15px;
+        }
+        .three-col {
+            display: grid;
+            grid-row-gap: 10px;
+            grid-column-gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
         }

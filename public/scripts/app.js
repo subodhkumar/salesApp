@@ -69,9 +69,11 @@ app.controller('homeController',function($scope,$state,$timeout){
 
    
     $scope.state = $state;
+
     $scope.goSalesDb = function(){
         
         $state.go('app.salesDb');
+        $scope.showNotification();
     }
     $scope.goEstDb = function(){
         $state.go('app.estDb');
@@ -105,6 +107,7 @@ app.controller('homeController',function($scope,$state,$timeout){
         $scope.goViewEst();
     }
 
+    
     $scope.inclusion = [
         'Anchor Bolts',
         'Beams',
@@ -129,12 +132,13 @@ app.controller('homeController',function($scope,$state,$timeout){
         'Bollard'
     ];
     $scope.salesStatus = [
-        'Lead','Published','Estimation','Quote','Bid','Close','Win'
+        'RFQ','Estimate Pending','Estimate Received','Quote Pending','Quote Received'
     ];
 
     $scope.showNotification  = function(){
-        $scope.nHeader = 'Welcome to Apex';
-        $scope.nContent = 'Please check out the features';
+        let curDate = new Date(Date.now()+1);
+        $scope.nHeader = 'Info';
+        $scope.nContent = 'Bid #25678 is due by  '+(parseInt(curDate.getMonth())+1)+'/'+curDate.getDate()+'/'+curDate.getFullYear();
         $scope.nShow = true;
         $timeout(function(){
             $scope.nShow = false;
@@ -214,6 +218,12 @@ app.controller('homeController',function($scope,$state,$timeout){
         }
       ];
 
+    $scope.getProject = function(){
+        return Math.ceil(Math.random())*99;
+    }
+    $scope.getBid = function(){
+        return Math.ceil(Math.random())*12345;
+    }
     $scope.getAmount = function(){
         return Math.ceil(Math.random())*9999;
     }
@@ -222,7 +232,7 @@ app.controller('homeController',function($scope,$state,$timeout){
     }  
    
     $scope.getHours = function(){
-        let res = Math.round(Math.random())*100;
+        let res = Math.round(Math.random() )*100;
         return res;
     }
     

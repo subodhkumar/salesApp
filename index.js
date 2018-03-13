@@ -9,5 +9,5 @@ app.get('/',(req,res)=>{
   res.redirect('/views/home.html');
 });
 app.listen(PORT,()=>{
-    console.log('Server started at 4000');
+    console.log('Server started at 5000');
 })

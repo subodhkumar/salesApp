@@ -11,22 +11,28 @@
                 <div>
                     #
                 </div>
-                <div>Company</div>
-                <div>Received</div>
-                <div>Sent</div>
-                <div>Assignee</div>
+                <div>Fabricator</div>
+                <div>Project Name</div>
+                <div>Bid#</div>
+                <div>Bid Received Date</div>
+                <div>Bid Due Date</div>
+                <div>Bid Received Date</div>
+                <div>Executive</div>
                 <div>Status</div>
             </div>
             <div class="content">
-                <div ng-repeat="i in salesList | limitTo: 8" class="tRow tContent" ng-click="showEstimate(i)">
+                <div ng-repeat="i in salesList" class="tRow tContent" ng-click="showSalesLead(i)">
                     <div>
                         {{i.index+1}}
                     </div>
                     <div>{{i.company}}</div>
+                    <div>Fabrication Project #{{getProject()}}</div>
+                    <div>Bid #{{getBid()}}</div>
                     <div>{{ getReceivedDate()|date}}</div>
                     <div>{{ getSentDate()|date}}</div>
+                    <div>{{ getSentDate()|date}}</div>
                     <div>{{ i.assignee}}</div>
-                    <div>Estimation</div>
+                    <div>{{getStatus()}}</div>
                 </div>
             </div>
         </div>

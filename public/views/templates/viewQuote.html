@@ -58,9 +58,15 @@
         </div>
         <div class="card estInfo">
 
-            <div class="estInfoForm">
+            <div class="three-col">
                 <div class="info">
                     <div class="infoLabel">Quote Price</div>
+                    <div class="infoContent">
+                        <input class="fwInput" type="text" value="{{getAmount()|currency}}">
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="infoLabel">Engineering Price</div>
                     <div class="infoContent">
                         <input class="fwInput" type="text" value="{{getAmount()|currency}}">
                     </div>
@@ -74,5 +80,6 @@
 
             </div>
         </div>
+        
     </div>
 </div>
